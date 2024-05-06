@@ -3,16 +3,18 @@ layout: default
 ---
 
 <header class="bg-gradient-to-r from-blue-600 to-teal-500 text-white">
-<div class="container mx-auto px-4 md:px-8">
-<div class="flex flex-col md:flex-row items-center justify-between">
-    <div class="md:w-1/2 mb-8 md:mb-0">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">Navigate with Confidence</h1>
-    <p class="text-lg mb-6">Truewind, your essential Canadian marine weather companion for safe and reliable voyages.</p>
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between max-h-[150px]">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Navigate with Confidence</h1>
+        <p class="text-lg mb-6">Truewind, your essential Canadian marine weather companion for safe and reliable voyages.</p>
+      </div>
+      <div class="md:w-1/2 pb-20 h-[200px]">
+        <img src="/assets/appscreen.jpg" alt="Truewind Canadian Marine Weather App Screenshot" class="appscreen rounded-lg shadow-lg">
+      </div>
     </div>
-    <div class="md:w-1/2">
-    <img src="/assets/appscreen.jpg" alt="Truewind Canadian Marine Weather App Screenshot" class="rounded-lg shadow-lg">
-    </div>
-</div></div>
+  </div>
+</header>
 
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Discover TrueWind: The Ultimate Canadian Marine Weather App for Every Mariner" 
 image: /assets/roughseas.webp
-date: 2023-05-06
+date: 2024-05-06
 ---
 
 When it comes to sailing in Canadian waters, having the right marine weather app can make all the difference. Today, let's compare two popular choices among mariners: TrueWind and PredictWind. While both apps offer valuable tools, there are several reasons why TrueWind might just be the superior choice for those navigating the unique challenges of Canadian marine environments.
