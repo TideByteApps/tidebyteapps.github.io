@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<article class="bg-white text-gray-900 py-12 md:py-20">
+  <div class="container mx-auto px-4 lg:px-24 md:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-gray-900">{{ page.title }}</h1>
+        <p class="text-lg mb-6 text-gray-600">{{ page.date | date: "%B %-d, %Y" }}</p>
+        <p class="text-lg mb-6 text-gray-700">{{ page.excerpt }}</p>
+      </div>
+      <div class="md:w-1/2">
+        <img src="{{ page.image }}" alt="{{ page.title }} Image" class="rounded-lg shadow-lg">
+      </div>
+    </div>
+    <div class="mt-12 prose prose-lg text-gray-900">
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+<section class="bg-gradient-to-r from-green-500 to-yellow-500 text-white py-12 md:py-20">
+    <article>
+  <div class="container mx-auto px-4 lg:px-24 md:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">More from the Truewind Blog</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for post in site.posts limit:3 %}
+      <a href="{{ post.url }}" class="bg-white rounded-lg shadow-lg overflow-hidden text-gray-900">
+        <img src="{{ post.image }}" alt="{{ post.title }} Image" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-gray-900">{{ post.title }}</h3>
+          <p class="text-gray-500">{{ post.excerpt }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</article></section>
+
+<style>
+  /* Styles for the Markdown-generated content */
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: #1a202c;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose p, .prose ol, .prose ul {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+  }
+
+  .prose a {
+    color: #4299e1;
+    text-decoration: underline;
+  }
+
+  .prose code {
+    background-color: #f7fafc;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+  }
+
+  .prose pre {
+    background-color: #f7fafc;
+    padding: 1.5em;
+    overflow-x: auto;
+    border-radius: 0.5rem;
+  }
+</style>

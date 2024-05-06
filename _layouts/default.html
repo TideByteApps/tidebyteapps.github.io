@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truewind - Official Canadian Marine Weather App</title>
+  <meta name="description" content="Sail with confidence using Truewind, the official Canadian marine weather app. Get user-friendly maps, offline weather data, and save your favorite locations.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes weatherFront {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes windGusts {
+      0% {
+        transform: translateX(-100%) rotate(-45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100%) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes windLines {
+      0% {
+        transform: translateX(-100%) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(0%) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100%) rotate(90deg);
+        opacity: 0;
+      }
+    }
+
+    .weather-front {
+      background: linear-gradient(to right, #1565C0, #42A5F5, #4DD0E1, #1565C0);
+      background-size: 400% 400%;
+      animation: weatherFront 30s ease infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .weather-front::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #0D47A1, #1976D2, #03A9F4, #0D47A1);
+      background-size: 400% 400%;
+      animation: weatherFront 25s ease infinite;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .weather-front .wind-gusts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .weather-front .wind-gusts::before,
+    .weather-front .wind-gusts::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(to right, #4DD0E1, #03A9F4);
+      border-radius: 50%;
+      animation: windGusts 10s linear infinite;
+    }
+
+    .weather-front .wind-gusts::before {
+      top: 20%;
+      left: -50px;
+    }
+
+    .weather-front .wind-gusts::after {
+      bottom: 30%;
+      right: -50px;
+    }
+
+    .weather-front .wind-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .weather-front .wind-lines::before,
+    .weather-front .wind-lines::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(to right, #4DD0E1, #03A9F4);
+      transform-origin: top left;
+      animation: windLines 8s linear infinite;
+    }
+
+    .weather-front .wind-lines::before {
+      top: 10%;
+      left: 20%;
+      transform: rotate(30deg);
+    }
+
+    .weather-front .wind-lines::after {
+      bottom: 15%;
+      right: 30%;
+      transform: rotate(-60deg);
+    }
+  </style>
+</head>
+<body class="font-sans">
+    <header class="bg-gradient-to-r from-blue-600 to-teal-500 text-white py-12 md:py-20">
+      <div class="container mx-auto px-4 md:px-8">
+        <nav class="flex flex-col md:flex-row justify-between items-center mb-8">
+          <div class="flex items-center">
+            <a href="/" class="text-3xl md:text-4xl font-bold mb-4 md:mb-0 mr-4">TrueWind</a>
+          </div>
+          <div class="flex items-center">
+            <a href="https://apps.apple.com/no/app/truewind/id6470672268" class="mr-4 hover:text-gray-300">
+              <img src="/assets/iosdownload.svg" class="h-20 inline-block mr-2 py-3" />
+            </a>
+            <a href='https://play.google.com/store/apps/details?id=app.tidebyte.marineweather&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' class="mr-4 hover:text-gray-300">
+              <img alt='Get it on Google Play' src='/assets/androiddownload.png' class="h-20 inline-block mr-2" />
+            </a>
+          </div>
+        </nav>
+
+    </header>
+  
+    {{ content }}
+  
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+        <p>&copy; 2024 Truewind. All rights reserved.</p>
+        <a href="/privacy.html" class="hover:text-gray-400">Privacy Policy</a>
+      </div>
+    </footer>
+  </body>
+  </html>
+  
